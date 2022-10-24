@@ -5,9 +5,9 @@
         <div class="col s6 offset-6 card #00bfa5 teal accent-4">
             <div class="card">  
                 <div class="card-action">
-                    <h3> Todo List </h3>
+                    <h3 class="teal-text"> Lista de tarefas </h3>
 
-                    <a href = "{{route('new_task')}}" class="waves-effect waves-light btn">Nova Taske</a>
+                    <a href = "{{route('new_task')}}" class="waves-effect waves-light btn">Nova Tarefa</a>
                     <hr>
                    
                     @if ($tasks->count() === 0)
@@ -18,8 +18,7 @@
                             <table class="striped">
                                 <thead>
                                     <tr>
-                                        <th>Tasks</th>
-                                        <th>Actions</th>
+                                        <th>Tarefas</th>
                                     </tr>
                             </thead>
                             <tbody>
