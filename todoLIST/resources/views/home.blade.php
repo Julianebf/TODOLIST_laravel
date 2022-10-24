@@ -8,6 +8,7 @@
                     <h3 class="teal-text"> Lista de tarefas </h3>
 
                     <a href = "{{route('new_task')}}" class="waves-effect waves-light btn">Nova Tarefa</a>
+                    <a href = "{{route('list_invisible')}}" class="waves-effect waves-light btn">Lista de tarefas invisiveis</a>
                     <hr>
                    
                     @if ($tasks->count() === 0)
@@ -27,17 +28,17 @@
                                         <td>{{$task->task}}</td>
                                         <td>
                                         @if ($task->done == null)
-                                            <a href="" class="btn-floating red"><i class="material-icons">close</i>
+                                            <a href="{{route('task_done', ['id' => $task->id])}}" class="btn-floating purple"><i class="material-icons">check</i>
                                         @else
-                                            <a href="" class="btn-floating green"><i class="material-icons">check</i>
+                                            <a href="{{route('task_undone', ['id' => $task->id])}}" class="btn-floating green"><i class="material-icons">done_all</i>
                                         @endif
                                         </td>
-                                        <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></td></td>
+                                        <td><a href="{{route('edit_task', ['id' => $task->id])}}" class="btn-floating blue lighten-1"><i class="material-icons">edit</i></td></td>
                                         <td>
                                         @if ($task->visible == 1)
-                                            <a href="" class="btn-floating grey"><i class="material-icons">visibility</i>
+                                            <a href="{{route('task_invisible', ['id' => $task->id])}}" class="btn-floating grey"><i class="material-icons">visibility</i>
                                         @else
-                                            <a href="" class="btn-floating black"><i class="material-icons">visibility_off</i>
+                                            <a href="{{route('task_visible', ['id' => $task->id])}}" class="btn-floating black"><i class="material-icons">visibility_off</i>
                                         @endif
                                         </td>
                                     </tr>
